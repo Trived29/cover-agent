@@ -102,10 +102,11 @@ class CoverageProcessor:
         root = tree.getroot()
         lines_covered, lines_missed = [], []
         filename = os.path.basename(self.src_file_path)
-
+        print(filename)
         for cls in root.findall(".//class"):
             name_attr = cls.get("filename")
             if name_attr and name_attr.endswith(filename):
+                print("yes")
                 for line in cls.findall(".//line"):
                     line_number = int(line.get("number"))
                     hits = int(line.get("hits"))
