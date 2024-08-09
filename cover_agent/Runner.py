@@ -17,6 +17,7 @@ class Runner:
         """
         # Get the current time before running the test command, in milliseconds
         command_start_time = int(round(time.time() * 1000))
+        print(f"Command being run: {command}")
 
         # Ensure the command is executed with shell=True for string commands
         result = subprocess.run(
